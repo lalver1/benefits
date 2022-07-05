@@ -1,23 +1,12 @@
 # To run Cypress tests with Docker outside of the devcontainer:
 # - Launch the app (with host.docker.internal included in ALLOWED_HOSTS)
 # - Run `docker compose up --exit-code-from cypress`
-version: '3.8'
+version: "3.8"
 services:
-  # app:
-  #   build: ..
-  #   image: benefits_client:latest
-  #   env_file: ../../.devcontainer/.env
-  #   ports:
-  #     - 8123:8123
-  #   volumes:
-  #     - ../../fixtures:/home/calitp/app/fixtures:ro
   cypress:
     image: "cypress/included:10.3.0"
-    # depends_on:
-    #   - app
     environment:
       - CYPRESS_baseUrl=http://host.docker.internal:11369
-    # tty: true
     working_dir: /tests/cypress
     volumes:
       - ./:/tests/cypress
