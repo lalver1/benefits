@@ -1,12 +1,14 @@
 # To run Cypress tests with Docker outside of the devcontainer:
+# - Make sure you've initialized your database with the sample fixtures (./bin/init.sh)
 # - Launch the app (with host.docker.internal included in ALLOWED_HOSTS)
+#   - Make sure the port it's running from and the one in CYPRESS_baseUrl below are matching
 # - Run `docker compose up --exit-code-from cypress`
 version: "3.8"
 services:
   cypress:
     image: "cypress/included:10.3.0"
     environment:
-      - CYPRESS_baseUrl=http://host.docker.internal:11369
+      - CYPRESS_baseUrl=http://host.docker.internal:8000
     working_dir: /tests/cypress
     volumes:
       - ./:/tests/cypress
