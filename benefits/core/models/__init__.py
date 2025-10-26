@@ -1,4 +1,5 @@
 from .common import template_path, SecretNameField, PemData, Environment
+from .copy_pages import CopyEligibility
 from .transit import (
     agency_logo_large,
     agency_logo_small,
@@ -13,6 +14,7 @@ __all__ = [
     "agency_logo_small",
     "template_path",
     "CardSchemes",
+    "CopyEligibility",
     "Environment",
     "EnrollmentMethods",
     "EnrollmentFlow",

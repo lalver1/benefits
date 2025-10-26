@@ -3,6 +3,7 @@ The core application: Admin interface configuration.
 """
 
 from .common import PemDataAdmin
+from .copy_pages import CopyEligibilityAdmin
 from .transit import TransitAgencyAdmin
 from .enrollment import EnrollmentEventAdmin, SortableEnrollmentFlowAdmin
 from .users import (
@@ -20,6 +21,7 @@ __all__ = [
     "TransitAgencyAdmin",
     "EnrollmentEventAdmin",
     "SortableEnrollmentFlowAdmin",
+    "CopyEligibilityAdmin",
     "GOOGLE_USER_INFO_URL",
     "add_staff_user_to_group",
     "add_transit_agency_staff_user_to_group",
